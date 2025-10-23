@@ -1,0 +1,26 @@
+1.Using SELECT * and Specific Columns
+
+Objective	SQL Query	Description
+Select All	SELECT * FROM Employees;	Retrieves all columns and rows from the Employees table.
+Select Specific Columns	SELECT FirstName, LastName, Salary FROM Employees;	Retrieves only the FirstName, LastName, and Salary columns.
+Select Distinct Values	SELECT DISTINCT Department FROM Employees;	Retrieves the unique department names, removing duplicates.
+
+2.It's excellent that you're focusing on the fundamental SELECT statement, as it's the core of data extraction in SQL.Here is an SQL script illustrating the basic queries and clauses you listed. Assume we are working with a table named Employees that has columns like EmployeeID, FirstName, LastName, Department, Salary, and HireDate.Basic SELECT Queries Script1. Using SELECT * and Specific ColumnsThese queries show how to retrieve all data or a specific subset of columns.ObjectiveSQL QueryDescriptionSelect AllSELECT * FROM Employees;Retrieves all columns and rows from the Employees table.Select Specific ColumnsSELECT FirstName, LastName, Salary FROM Employees;Retrieves only the FirstName, LastName, and Salary columns.Select Distinct ValuesSELECT DISTINCT Department FROM Employees;Retrieves the unique department names, removing duplicates.
+
+2. Applying WHERE, AND, OR, LIKE, BETWEEN
+
+Objective,SQL Query,Operator
+Simple Filter,SELECT * FROM Employees WHERE Department = 'Sales';,= (Equality)
+Filter with AND,SELECT * FROM Employees WHERE Department = 'Marketing' AND Salary > 60000;,AND (Both conditions must be true)
+Filter with OR,SELECT * FROM Employees WHERE Department = 'HR' OR Department = 'IT';,OR (At least one condition must be true)
+Range Filter,SELECT * FROM Employees WHERE Salary BETWEEN 70000 AND 90000;,BETWEEN (Inclusive range check)
+Pattern Matching,SELECT * FROM Employees WHERE LastName LIKE 'S%';,LIKE with % (Finds any last name starting with 'S')
+Negated Condition,"SELECT * FROM Employees WHERE Department NOT IN ('Finance', 'Legal');",NOT IN (Excludes specified values)
+
+3.Sorting and Limiting Results
+
+Objective,SQL Query,Description
+Sort Ascending (Default),SELECT * FROM Employees ORDER BY LastName ASC;,"Sorts the result by LastName in alphabetical (ascending) order. (ASC is optional, as it's the default.)"
+Sort Descending,"SELECT FirstName, Salary FROM Employees ORDER BY Salary DESC;",Sorts the result by Salary in highest-to-lowest (descending) order.
+Sort by Multiple Columns,"SELECT * FROM Employees ORDER BY Department ASC, LastName ASC;","Sorts first by Department, then by LastName for employees in the same department."
+Limit Rows,SELECT * FROM Employees ORDER BY HireDate DESC LIMIT 10;,Retrieves the 10 most recently hired employees.
